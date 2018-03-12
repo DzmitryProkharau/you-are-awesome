@@ -22,7 +22,16 @@ const incrementor = () => {
 	count++;
 	return incrementor;
 };
-const asyncIncrementor = () => {};
+var countAs = 0;
+const asyncIncrementor = () => {
+	let promise = new Promise((resolve) => {
+		setTimeout(() => {
+			countAs++;
+			resolve(countAs);
+		});
+	});
+	return promise;
+};
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
