@@ -32,7 +32,15 @@ const asyncIncrementor = () => {
 	});
 	return promise;
 };
-const createIncrementer = () => {};
+const createIncrementer = () => {
+	function* gen() {
+		yield 1;
+		yield 2;
+		yield 3;
+	}
+	var g = gen();
+	return g;
+};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = (arg) => {
